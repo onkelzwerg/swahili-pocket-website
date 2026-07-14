@@ -36,15 +36,15 @@ const swahiliPocket = {
     },
     {
       emoji: `🧠`,
-      title: `Spaced Repetition, das funktioniert`,
-      description: `Leitner-System mit 5 Boxen (1/2/4/7/30 Tage) und CEFR-orientierten Levels von A1.1 bis C2.`,
+      title: `Wiederholen im richtigen Rhythmus`,
+      description: `Leitner-System mit 5 Boxen: Wiederholung nach 1, 2, 4 und 7 Tagen — wer Box 5 erreicht, hat die Karte gemeistert. Dazu CEFR-orientierte Levels von A1.1 bis C2.`,
     },
   ] as Usp[],
   features: [
     {
       emoji: `🎴`,
-      title: `Karteikarten mit Spaced Repetition`,
-      description: `5 Boxen mit Intervallen von 1, 2, 4, 7 und 30 Tagen. Karten swipen (rechts = gewusst, links = nochmal) oder mit Buttons bewerten. Antippen zum Umdrehen: vorne Swahili, hinten Deutsch mit bis zu zwei Beispielsätzen.`,
+      title: `Karteikarten nach dem Leitner-System`,
+      description: `5 Boxen mit wachsenden Abständen: Wiederholung nach 1, 2, 4 und 7 Tagen — in Box 5 ist die Karte gemeistert. Karten swipen (rechts = gewusst, links = nochmal) oder mit Buttons bewerten. Antippen zum Umdrehen: vorne Swahili, hinten Deutsch mit bis zu zwei Beispielsätzen.`,
     },
     {
       emoji: `🔎`,
@@ -126,7 +126,13 @@ const swahiliPocket = {
       a: `Für tansanisches Kiswahili sanifu — die Standardvariante, die in Tansania, Kenia und weiten Teilen Ostafrikas verstanden wird.`,
     },
   ] as FaqItem[],
-  boxIntervals: [`1 Tag`, `2 Tage`, `4 Tage`, `7 Tage`, `30 Tage`],
+  boxes: [
+    `Wiederholung nach 1 Tag`,
+    `Wiederholung nach 2 Tagen`,
+    `Wiederholung nach 4 Tagen`,
+    `Wiederholung nach 7 Tagen`,
+    `Gemeistert — dauerhaft gelernt`,
+  ],
   navigation: [`Home`, `Lexikon`, `Üben`, `Dialoge`, `Ngeli`, `Mehr`],
   cardPreviews: [
     { front: `Karibu!`, back: `Willkommen!` },

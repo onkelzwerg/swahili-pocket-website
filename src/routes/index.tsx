@@ -34,7 +34,7 @@ export const Route = createFileRoute("/")({
             priceCurrency: "EUR",
           },
           featureList: [
-            "Karteikarten mit Leitner-Spaced-Repetition",
+            "Karteikarten nach dem Leitner-System",
             "1.000+ kuratierte Vokabeln mit Beispielsätzen",
             "Ngeli-Grammatik-Referenz",
             "13 Alltags-Dialoge mit Vorlesefunktion",
@@ -402,13 +402,14 @@ function SwahiliPocketPage() {
               Leitner-Box
             </p>
             <p className="mt-2 text-muted-foreground">
-              5 Boxen, wachsende Intervalle. Wer sitzt, kommt in die nächste
-              Box — wer wackelt, zurück auf Box 1.
+              5 Boxen, wachsende Abstände. Wer sitzt, kommt in die nächste
+              Box — wer wackelt, zurück auf Box 1. Und wer Box 5 erreicht,
+              hat die Karte gemeistert.
             </p>
             <div className="mt-6 grid gap-3">
-              {app.boxIntervals.map((interval, i) => (
+              {app.boxes.map((note, i) => (
                 <div
-                  key={interval}
+                  key={note}
                   className="flex items-center gap-4 rounded-2xl border border-border bg-card p-4"
                   style={{ marginLeft: `${i * 12}px` }}
                 >
@@ -425,9 +426,7 @@ function SwahiliPocketPage() {
                   </span>
                   <div>
                     <p className="font-display text-base">Box {i + 1}</p>
-                    <p className="text-xs text-muted-foreground">
-                      Wiederholung alle {interval}
-                    </p>
+                    <p className="text-xs text-muted-foreground">{note}</p>
                   </div>
                 </div>
               ))}

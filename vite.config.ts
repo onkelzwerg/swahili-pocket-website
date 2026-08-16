@@ -10,7 +10,8 @@ import viteReact from "@vitejs/plugin-react";
 // static assets in dist/client. TanStack Start's server entry is redirected to
 // src/server.ts (our SSR error wrapper). nitro only runs on build, not on dev.
 export default defineConfig(({ command }) => ({
-  server: { host: "::", port: 8080 },
+  // Der Port darf von außen kommen (preview_start setzt PORT), sonst 8080.
+  server: { host: "::", port: Number(process.env.PORT) || 8080 },
   resolve: {
     alias: {
       "@": `${process.cwd()}/src`,

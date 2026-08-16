@@ -314,4 +314,14 @@ Die Kriterien für die Festlegung der Dauer, für die die personenbezogenen Date
 
 Weitere Informationen und die geltenden Datenschutzbestimmungen von Cloudflare, Inc. können unter [https://www.cloudflare.com](https://www.cloudflare.com) abgerufen werden.
 
+## **18. Reichweitenmessung mit Cloudflare Web Analytics**
+
+Wir messen die Nutzung dieser Webseite mit Cloudflare Web Analytics. Der Dienst zählt Seitenaufrufe und erfasst technische Rahmendaten wie Referrer, ungefähres Land, Gerätetyp und Browser. Dafür werden **keine Cookies gesetzt**, es wird **kein Fingerprinting** eingesetzt, und es werden **keine personenbezogenen Profile** gebildet. IP-Adressen werden nicht gespeichert. Ein Wiedererkennen einzelner Besucherinnen und Besucher über mehrere Seitenaufrufe oder Sitzungen hinweg findet nicht statt.
+
+Zweck der Verarbeitung ist zu verstehen, welche Inhalte gefunden und gelesen werden, um die Webseite zu verbessern. Die Verarbeitung beruht auf Art. 6 (1) (f) DS-GVO; das berechtigte Interesse liegt in der bedarfsgerechten Gestaltung unseres Angebots. Da keine Informationen im Endgerät gespeichert oder ausgelesen werden, ist keine Einwilligung nach § 25 TDDDG erforderlich.
+
+Betreibergesellschaft ist Cloudflare, Inc. (Anschrift und Vertreter siehe Abschnitt 17). Weitere Informationen: [https://www.cloudflare.com/web-analytics/](https://www.cloudflare.com/web-analytics/)
+
+**Die App selbst ist davon nicht betroffen.** Unter app.swahili-pocket.de findet keinerlei Reichweitenmessung statt. Alle Lerndaten bleiben in der lokalen Datenbank Ihres Browsers; es gibt kein Konto und keine Übertragung an uns.
+
 Diese Datenschutzerklärung wurde durch die Nutzung eines Generators erstellt, der gemeinsam von [Rechtsberatern für Datenschutz](https://www.wbs.legal/), [Fachleuten für Datenschutzkonformität](https://dg-datenschutz.de/) und der [ISO 9001 Zertifizierungsstelle](https://cert-authority.com/) entwickelt wurde.

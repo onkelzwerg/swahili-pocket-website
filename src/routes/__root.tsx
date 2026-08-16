@@ -9,6 +9,28 @@ import {
 } from "@tanstack/react-router";
 
 import appCss from "../styles.css?url";
+import app from "@/data/apps/swahili-pocket";
+
+/**
+ * Cloudflare Web Analytics — cookiefrei, ohne Fingerprinting, ohne
+ * personenbezogene Profile (Datenschutzerklärung § 18).
+ *
+ * Der bevorzugte Weg ist die automatische Einrichtung im Cloudflare-Dashboard:
+ * die Domain läuft ohnehin über Cloudflare, das Beacon wird dann am Rand
+ * eingefügt und die Seite bleibt ohne Skript-Tag. Nur wenn das nicht greift,
+ * VITE_CF_BEACON_TOKEN setzen — dann hängt das Beacon hier mit drin.
+ */
+function cloudflareBeacon() {
+  const token = import.meta.env.VITE_CF_BEACON_TOKEN;
+  if (!token) return [];
+  return [
+    {
+      src: "https://static.cloudflareinsights.com/beacon.min.js",
+      defer: true,
+      "data-cf-beacon": JSON.stringify({ token }),
+    },
+  ];
+}
 
 function NotFoundComponent() {
   return (
@@ -68,41 +90,47 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Swahili Pocket — Swahili lernen. Pole pole." },
-      {
-        name: "description",
-        content:
-          "Swahili Pocket — kostenlose, werbefreie PWA für Deutschsprachige. Karteikarten, 1.000+ Vokabeln, Ngeli-Grammatik und Dialoge. Offline, ohne Konto.",
-      },
-      { property: "og:title", content: "Swahili Pocket" },
-      {
-        property: "og:description",
-        content:
-          "Swahili lernen mit Karteikarten — kostenlos, offline, ohne Konto.",
-      },
+      { title: `${app.name} — ${app.tagline}` },
+      { name: "description", content: app.description },
+      { property: "og:title", content: `${app.name} — ${app.tagline}` },
+      { property: "og:description", content: app.description },
       { property: "og:type", content: "website" },
-      { property: "og:site_name", content: "Swahili Pocket" },
+      { property: "og:site_name", content: app.name },
+      { property: "og:locale", content: "de_DE" },
+      // Absolute URL: relative Pfade werden von WhatsApp, LinkedIn & Co. nicht aufgelöst.
+      { property: "og:image", content: `${app.siteUrl}/og-image.png` },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
+      {
+        property: "og:image:alt",
+        content: `${app.name} — Karteikarten, Geschichten und Dialoge auf Swahili`,
+      },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:image", content: `${app.siteUrl}/og-image.png` },
+      { name: "theme-color", content: "#c2522a" },
     ],
     links: [
+      { rel: "stylesheet", href: appCss },
+      // Die Schriften liegen selbst gehostet unter /fonts (siehe src/styles.css).
+      // Vorgeladen wird nur der lateinische Schnitt — der Rest kommt bei Bedarf.
       {
-        rel: "stylesheet",
-        href: appCss,
-      },
-      {
-        rel: "preconnect",
-        href: "https://fonts.googleapis.com",
-      },
-      {
-        rel: "preconnect",
-        href: "https://fonts.gstatic.com",
+        rel: "preload",
+        href: "/fonts/Fraunces-2.woff2",
+        as: "font",
+        type: "font/woff2",
         crossOrigin: "anonymous",
       },
       {
-        rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap",
+        rel: "preload",
+        href: "/fonts/PlusJakartaSans-3.woff2",
+        as: "font",
+        type: "font/woff2",
+        crossOrigin: "anonymous",
       },
+      { rel: "icon", href: "/favicon.png", type: "image/png", sizes: "192x192" },
+      { rel: "apple-touch-icon", href: "/apple-touch-icon.png" },
     ],
+    scripts: cloudflareBeacon(),
   }),
   shellComponent: RootShell,
   component: RootComponent,
@@ -154,22 +182,23 @@ function SiteHeader() {
           <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-primary text-primary-foreground font-display text-lg">
             S
           </span>
-          <span className="font-display text-2xl tracking-tight">
-            Swahili Pocket
-          </span>
+          <span className="font-display text-2xl tracking-tight">Swahili Pocket</span>
         </Link>
         <nav className="flex items-center gap-6 text-sm font-medium">
+          <a href="/#so-laeufts" className="hidden text-foreground/80 hover:text-primary sm:inline">
+            So läuft's
+          </a>
           <a href="/#funktionen" className="hidden text-foreground/80 hover:text-primary sm:inline">
             Funktionen
           </a>
-          <a href="/#installieren" className="hidden text-foreground/80 hover:text-primary sm:inline">
-            Installieren
-          </a>
+          <Link to="/neu" className="hidden text-foreground/80 hover:text-primary sm:inline">
+            Was ist neu
+          </Link>
           <a href="/#faq" className="hidden text-foreground/80 hover:text-primary sm:inline">
             FAQ
           </a>
           <a
-            href="https://app.swahili-pocket.de"
+            href={app.appUrl}
             target="_blank"
             rel="noreferrer"
             className="inline-flex items-center justify-center rounded-full bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground hover:bg-primary/90"
@@ -188,20 +217,13 @@ function SiteFooter() {
       <div className="mx-auto flex max-w-6xl flex-col items-start justify-between gap-4 px-6 py-8 text-sm text-muted-foreground sm:flex-row sm:items-center">
         <p>© {new Date().getFullYear()} Swahili Pocket</p>
         <div className="flex flex-wrap gap-x-6 gap-y-2">
-          <a
-            href="https://app.swahili-pocket.de"
-            target="_blank"
-            rel="noreferrer"
-            className="hover:text-primary"
-          >
+          <a href={app.appUrl} target="_blank" rel="noreferrer" className="hover:text-primary">
             App öffnen
           </a>
-          <a
-            href="https://github.com/onkelzwerg/swahili-pocket"
-            target="_blank"
-            rel="noreferrer"
-            className="hover:text-primary"
-          >
+          <Link to="/neu" className="hover:text-primary">
+            Was ist neu
+          </Link>
+          <a href={app.repoUrl} target="_blank" rel="noreferrer" className="hover:text-primary">
             GitHub
           </a>
           <Link to="/impressum" className="hover:text-primary">

@@ -16,6 +16,9 @@ dist-ssr
 .nitro
 *.local
 
+# Chrome-Profil des Screenshot-Laufs
+.cache/
+
 # Wrangler / Cloudflare
 .wrangler/
 .dev.vars

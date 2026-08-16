@@ -1,0 +1,163 @@
+<!doctype html>
+<!--
+  Vorlage für public/og-image.png (1200×630) — das Bild, das erscheint, wenn
+  jemand swahili-pocket.de in WhatsApp, Mastodon, LinkedIn oder Slack teilt.
+
+  Erzeugt mit: npm run og-image
+  Schriften und Farben kommen aus derselben Quelle wie die Seite (public/fonts,
+  Tokens aus src/styles.css).
+-->
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      @font-face {
+        font-family: "Fraunces";
+        src: url("../public/fonts/Fraunces-2.woff2") format("woff2");
+        font-weight: 100 900;
+      }
+      @font-face {
+        font-family: "Plus Jakarta Sans";
+        src: url("../public/fonts/PlusJakartaSans-3.woff2") format("woff2");
+        font-weight: 200 800;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        width: 1200px;
+        height: 630px;
+        display: flex;
+        overflow: hidden;
+        font-family: "Plus Jakarta Sans", sans-serif;
+        background: linear-gradient(135deg, oklch(0.58 0.17 38) 0%, oklch(0.72 0.15 70) 100%);
+        color: #fff;
+      }
+      .glow {
+        position: absolute;
+        border-radius: 9999px;
+        filter: blur(90px);
+        opacity: 0.35;
+      }
+      .glow-a {
+        top: -140px;
+        left: -120px;
+        width: 460px;
+        height: 460px;
+        background: #fff;
+      }
+      .glow-b {
+        bottom: -260px;
+        right: 60px;
+        width: 460px;
+        height: 460px;
+        background: oklch(0.45 0.12 150);
+        opacity: 0.22;
+      }
+      .copy {
+        position: relative;
+        flex: 1;
+        padding: 76px 0 76px 80px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .badges {
+        display: flex;
+        gap: 10px;
+        font-size: 20px;
+      }
+      .badge {
+        background: rgba(255, 255, 255, 0.18);
+        border-radius: 9999px;
+        padding: 8px 18px;
+      }
+      h1 {
+        font-family: "Fraunces", serif;
+        font-size: 92px;
+        line-height: 1.02;
+        letter-spacing: -0.02em;
+        margin-top: 28px;
+        font-weight: 600;
+      }
+      h1 em {
+        font-style: italic;
+      }
+      p.sub {
+        margin-top: 24px;
+        font-size: 27px;
+        line-height: 1.4;
+        max-width: 620px;
+        opacity: 0.92;
+      }
+      .stats {
+        margin-top: 38px;
+        display: flex;
+        gap: 44px;
+      }
+      .stat b {
+        font-family: "Fraunces", serif;
+        font-size: 40px;
+        font-weight: 600;
+        display: block;
+        font-variant-numeric: tabular-nums;
+      }
+      .stat span {
+        font-size: 17px;
+        text-transform: uppercase;
+        letter-spacing: 0.16em;
+        opacity: 0.85;
+      }
+      .shot {
+        position: relative;
+        width: 430px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .phone {
+        width: 292px;
+        border: 10px solid rgba(0, 0, 0, 0.85);
+        border-radius: 44px;
+        overflow: hidden;
+        box-shadow: 0 40px 80px rgba(0, 0, 0, 0.35);
+        transform: rotate(4deg);
+        background: #faf5ec;
+      }
+      .phone img {
+        display: block;
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="glow glow-a"></div>
+    <div class="glow glow-b"></div>
+
+    <div class="copy">
+      <div class="badges">
+        <span class="badge">🇹🇿 Kiswahili sanifu</span>
+        <span class="badge">kostenlos · werbefrei</span>
+        <span class="badge">100 % offline</span>
+      </div>
+      <h1>Swahili lernen.<br /><em>Pole pole.</em></h1>
+      <p class="sub">
+        Karteikarten, Geschichten zum Lesen und Dialoge zum Mitreden — ohne Konto,
+        ohne Tracking.
+      </p>
+      <div class="stats">
+        <div class="stat"><b>1.268</b><span>Vokabeln</span></div>
+        <div class="stat"><b>20</b><span>Geschichten</span></div>
+        <div class="stat"><b>23</b><span>Dialoge</span></div>
+      </div>
+    </div>
+
+    <div class="shot">
+      <div class="phone">
+        <img src="../src/assets/screenshots/karte.png" alt="" />
+      </div>
+    </div>
+  </body>
+</html>

@@ -157,8 +157,8 @@ function SwahiliPocketPage() {
         <div className="mx-auto max-w-6xl px-6">
           <SectionHeading
             eyebrow="Der Weg durch die App"
-            title="Vokabeln sind das Mittel. Lesen und Mitreden sind das Ziel."
-            lead="Alles hängt an einer Zahl: 95 %. Sobald du so viel eines Textes kennst, öffnet er sich. Und wenn nicht, sagt dir die App auf das Wort genau, was noch fehlt."
+            title="Vom ersten Wort bis zum Gespräch."
+            lead="Alles hängt an einer Zahl: 95 %. Sobald du so viel eines Textes kennst, öffnet er sich — und solange etwas fehlt, nennt dir die App auf das Wort genau, welche Wörter das sind."
           />
           <ol className="mt-12 grid gap-5 md:grid-cols-4">
             {app.learningPath.map((step, i) => (
@@ -222,7 +222,10 @@ function SwahiliPocketPage() {
       {/* Galerie */}
       <section className="py-20">
         <div className="mx-auto max-w-6xl px-6">
-          <SectionHeading eyebrow="Ein Blick in die App" title="Echte Screens, keine Montage." />
+          <SectionHeading
+            eyebrow="Ein Blick in die App"
+            title="Aufgenommen aus der laufenden App."
+          />
         </div>
         <div className="mt-12 overflow-x-auto pb-4">
           <ul className="mx-auto flex w-max gap-8 px-6">

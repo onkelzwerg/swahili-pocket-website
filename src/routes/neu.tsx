@@ -45,8 +45,7 @@ function ChangelogPage() {
             Jede Version, in Klartext.
           </h1>
           <p className="mt-4 max-w-2xl text-lg text-white/90">
-            Was sich in {app.name} geändert hat — beschrieben in dem, was du davon merkst, nicht in
-            Ticketnummern.
+            Was sich in {app.name} geändert hat, beschrieben in dem, was du davon merkst.
           </p>
           <div className="mt-8">
             <Pill href={app.appUrl} variant="onDark">

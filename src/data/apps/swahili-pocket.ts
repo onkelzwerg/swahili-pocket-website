@@ -59,8 +59,8 @@ const swahiliPocket = {
     },
     {
       emoji: `⌨️`,
-      title: `Abrufen statt wiedererkennen`,
-      description: `Eine Runde mischt vier Übungsarten: Karte, Tippen, Hören und Lückensatz. Wer tippt, muss das Wort wirklich können — Tippfehler werden dabei verziehen, nicht bestraft.`,
+      title: `Du musst es können`,
+      description: `Eine Runde mischt vier Übungsarten: Karte, Tippen, Hören und Lückensatz. Wer tippt, muss das Wort wirklich abrufen — Tippfehler werden dabei verziehen.`,
     },
     {
       emoji: `🔓`,
@@ -95,15 +95,15 @@ const swahiliPocket = {
     {
       id: `ueben`,
       eyebrow: `Kujifunza · Üben`,
-      title: `Vier Übungsarten statt Kartenraten`,
-      lead: `Eine Runde mischt die Formate durch — jede Karte wird neu ausgewürfelt. Das ist anstrengender als Umdrehen und Nicken, und genau das ist der Punkt.`,
+      title: `Vier Übungsarten in jeder Runde`,
+      lead: `Jede Karte bekommt ihr Format neu zugelost. Das hält die Runde wach und verlangt echten Abruf — genau das, was hängen bleibt.`,
       points: [
         {
           title: `Karte, Tippen, Hören, Lückensatz`,
-          description: `Abschaltbar unter Einstellungen › Übungsarten. „Tippen" ist auf 40 % der Runde gedeckelt, damit eine Runde nicht zur Tipparbeit wird.`,
+          description: `Abschaltbar unter Einstellungen › Übungsarten. „Tippen" ist auf 40 % der Runde gedeckelt, damit eine Runde locker bleibt.`,
         },
         {
-          title: `Tippfehler zählen nicht als Fehler`,
+          title: `Tippfehler werden verziehen`,
           description: `Ein fehlendes Apostroph (ngombe für ng'ombe) oder zwei vertauschte Buchstaben werden erkannt und nur korrigiert. Kanntest du eine andere richtige Übersetzung? „Meine Antwort war auch richtig" wertet sie als gewusst.`,
         },
         {
@@ -118,14 +118,14 @@ const swahiliPocket = {
       id: `wiederholen`,
       eyebrow: `Kurudia · Wiederholen`,
       title: `Vier Antwortstufen — und die Karte weiß, wann sie wiederkommt`,
-      lead: `Statt richtig oder falsch: Nochmal, Schwer, Gut, Einfach. Unter jeder Stufe steht, wann du die Karte wiedersiehst.`,
+      lead: `Vier Stufen: Nochmal, Schwer, Gut, Einfach. Unter jeder steht, wann du die Karte wiedersiehst.`,
       points: [
         {
           title: `Zwei Lernmethoden, umschaltbar`,
           description: `Leitner mit fünf Boxen oder adaptiv nach FSRS, das die Abstände an jede einzelne Karte anpasst. Der Wechsel behält deinen Fortschritt — beide Zustände laufen immer mit.`,
         },
         {
-          title: `Gemeistert heißt lange Abstände, nicht nie wieder`,
+          title: `Gemeistert heißt lange Abstände`,
           description: `Box-5-Karten kommen nach 90 Tagen zurück. Und wenn genug Wörter über zwei Monate liegen, meldet sich von selbst der Langzeit-Check und sagt dir ehrlich, was noch sitzt.`,
         },
         {
@@ -144,14 +144,14 @@ const swahiliPocket = {
       points: [
         {
           title: `Die gesperrte Kachel nennt eine Zahl`,
-          description: `„Noch 2 Wörter bis zur Freischaltung" — und ein Tipp öffnet die Kartenauswahl mit genau diesen Wörtern. Kein „irgendwann mehr lernen", sondern zwei Wörter bis zur nächsten Geschichte.`,
+          description: `„Noch 2 Wörter bis zur Freischaltung" — und ein Tipp öffnet die Kartenauswahl mit genau diesen Wörtern. Zwei Wörter, dann steht die nächste Geschichte offen.`,
         },
         {
           title: `Zwei Stufen`,
           description: `Zehn Geschichten auf der ersten, zehn auf der zweiten Stufe — aufgebaut auf dem Wortschatz, den du schon hast.`,
         },
         {
-          title: `Antippen statt nachschlagen`,
+          title: `Antippen genügt`,
           description: `Jedes Wort im Text ist eine eigene Schaltfläche mit Übersetzung — und lässt sich von dort direkt als Lernkarte übernehmen.`,
         },
       ],
@@ -170,7 +170,7 @@ const swahiliPocket = {
         },
         {
           title: `Echte Stimmen`,
-          description: `Wörter, Beispielsätze, Dialoge und Geschichten sind mit echten Stimmen aufgenommen — keine Roboterstimme des Browsers, und offline verfügbar.`,
+          description: `Wörter, Beispielsätze, Dialoge und Geschichten sind mit echten Stimmen aufgenommen. Die Aufnahmen liegen als Dateien bei und spielen auch offline.`,
         },
         {
           title: `Auch hier: jedes Wort antippbar`,
@@ -206,15 +206,15 @@ const swahiliPocket = {
       id: `dranbleiben`,
       eyebrow: `Kuendelea · Dranbleiben`,
       title: `Ein Wochenziel, das du selbst setzt`,
-      lead: `Kein Gamification-Geschrei — ein Ring von Montag bis Sonntag, ein Tagesziel, das du wählst, und Meilensteine, die an Können hängen.`,
+      lead: `Ein Ring von Montag bis Sonntag, ein Tagesziel nach deinem Maß und Meilensteine, die an Können hängen.`,
       points: [
         {
           title: `Streak mit Joker`,
-          description: `Ein verpasster Tag verbraucht automatisch einen Joker statt deine Serie zu beenden. Nach längeren Pausen begrüßt dich eine freundliche Rückkehr-Runde.`,
+          description: `Ein verpasster Tag verbraucht automatisch einen Joker, und deine Serie läuft weiter. Nach längeren Pausen begrüßt dich eine freundliche Rückkehr-Runde.`,
         },
         {
           title: `17 Meilensteine`,
-          description: `Erreicht, wenn du etwas kannst — nicht, wenn du oft genug da warst. „350 gefestigt", „Zehn Dialoge offen", „Fehlerfrei getippt".`,
+          description: `Jeder hängt an einem Können: „350 gefestigt", „Zehn Dialoge offen", „Fehlerfrei getippt".`,
         },
         {
           title: `Ziele nach deinem Maß`,
@@ -222,7 +222,7 @@ const swahiliPocket = {
         },
       ],
       screenshot: `meilensteine`,
-      caption: `12 von 17 — Meilensteine hängen an Können, nicht an Klicks.`,
+      caption: `12 von 17 — jeder Meilenstein hängt an einem Können.`,
     },
   ] as FeatureSection[],
   /** Sechs zuschaltbare Wortschatzpakete (public/vocab-packs/index.json). */
@@ -280,11 +280,11 @@ const swahiliPocket = {
     },
     {
       q: `Was unterscheidet die App von einer Karteikarten-App?`,
-      a: `Die Karten sind Mittel, nicht Zweck. Was du lernst, schaltet Geschichten und Dialoge frei — ab 95 % bekannter Wörter. Dazu kommen vier Übungsarten statt bloßem Umdrehen und ein Grammatik-Gym für Verbformen und Ngeli-Kongruenz.`,
+      a: `Die Karten arbeiten auf etwas hin: Was du lernst, schaltet Geschichten und Dialoge frei — ab 95 % bekannter Wörter. Dazu kommen vier Übungsarten und ein Grammatik-Gym für Verbformen und Ngeli-Kongruenz.`,
     },
     {
       q: `Woher kommen die Stimmen?`,
-      a: `Aus vorproduzierten Aufnahmen, die mit der App ausgeliefert werden — nicht aus der Sprachausgabe des Browsers. Die spricht Swahili zu unzuverlässig aus, um darauf eine Hörübung zu bauen. Deshalb liegen die Aufnahmen als Dateien bei und funktionieren offline.`,
+      a: `Aus vorproduzierten Aufnahmen, die mit der App ausgeliefert werden. Die Sprachausgabe des Browsers spricht Swahili zu unzuverlässig aus, um darauf eine Hörübung zu bauen; deshalb liegen die Aufnahmen als Dateien bei und funktionieren offline.`,
     },
     {
       q: `Was sind Themenpakete?`,
